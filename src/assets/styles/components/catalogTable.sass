@@ -1,0 +1,72 @@
+.table_custom
+  width: 100%
+  margin: 0
+  background-color: #FBFBFB
+  border: 1px solid #E6E6E6
+  border-radius: 8px
+  border-collapse: separate
+  border-spacing: 0
+
+.table-head
+  th
+    font: normal 500 16px Roboto, serif
+    line-height: normal
+    color: #2D2E2E
+
+    &:first-child
+      width: 165px
+      padding: 22px 0 22px 25px
+
+    &:nth-child(3)
+      width: 130px
+
+    &:last-child
+      width: 185px
+
+.table__item
+  td
+    border-top: 1px solid #E6E6E6
+
+    &:nth-child(2)
+      vertical-align: top
+      padding-right: 10px
+
+    &:first-child
+     padding: 10px 0 10px 25px
+
+  &:hover
+     .table__item__delete
+       display: block !important
+
+.table__title
+  font: normal 16px Roboto, serif
+  line-height: normal
+  padding: 18px 0 12px 0
+
+.table__description
+  font: normal 14px Roboto, serif
+  color: #AFB1B3
+
+.table__category
+  font: normal 14px Roboto, serif
+  color: #646566
+  white-space: nowrap
+
+.table__prise__container
+  display: flex
+  justify-content: space-between
+
+.table__prise
+  white-space: nowrap
+  color: #FF7800
+  font: normal 500 20px Roboto, serif
+
+  span
+    font-size: 16px
+
+.table__item__delete
+  margin-right: 40px
+  width: 20px
+  height: 20px
+  vertical-align: sub
+  cursor: pointer
