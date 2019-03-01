@@ -2,30 +2,25 @@
     <tr class="table__item">
         <td>
             <div class="table__img">
-                <img src="../assets/items-img/tire_1.svg" alt=""/>
+                <img :src="`${item.img}`" alt=""/>
             </div>
         </td>
         <td>
             <div class="table__title">
-                <a href="#">Premiorri ViaMaggiore Z Plus (185/65R15 88H)</a>
+                <a href="#">{{item.title}}</a>
             </div>
             <div class="table__description">
-                <p>
-                    Зимние шины Premiorri ViaMaggiore Z Plus, спроектированные и
-                    выпускающиеся под британским брендом Premiorri на мощностях компании
-                    «Росава», являются следующим шагом после модели Premiorri
-                    ViaMaggiore...
-                </p>
+                <p>{{item.description}}</p>
             </div>
         </td>
         <td>
             <div class="table__category">
-                <p>Зимние шины</p>
+                <p>{{item.category}}</p>
             </div>
         </td>
         <td>
             <div class="table__prise__container">
-                <div class="table__prise">1000<span> UAH</span></div>
+                <div class="table__prise">{{item.price}}<span> UAH</span></div>
                 <div class="table__item__delete d-none">
                     <img src="../assets/images/delete.svg" alt="delete"/>
                 </div>
@@ -36,7 +31,13 @@
 
 <script>
     export default {
-        name: "CatalogTableItem"
+        name: "CatalogTableItem",
+        props: {
+            item: {
+                type: Object,
+                required: true
+            }
+        }
     };
 </script>
 

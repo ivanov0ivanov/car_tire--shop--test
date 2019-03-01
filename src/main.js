@@ -1,4 +1,5 @@
 import Vue from "vue";
+import store from "../store/index";
 import App from "./App.vue";
 import jQuery from "jquery";
 import router from "./router";
@@ -11,7 +12,8 @@ import "./assets/styles/app.sass";
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+new Vue ({
+    store,
+    router,
+    render: h => h (App)
+}).$mount ("#app");

@@ -1,7 +1,13 @@
 <template>
     <table class="table-hover table_custom">
         <thead>
-        <tr class="table-head">
+        <tr class="table-head" v-if="loading">
+            <th class="text-danger">LOADING</th>
+            <th class="text-danger">LOADING</th>
+            <th class="text-danger">LOADING</th>
+            <th class="text-danger">LOADING</th>
+        </tr>
+        <tr class="table-head" v-else>
             <th>Image</th>
             <th>Name</th>
             <th>Category</th>
@@ -9,18 +15,23 @@
         </tr>
         </thead>
         <tbody>
-        <CatalogTableItem/>
+        <CatalogTableItem v-for="item of items" :key="item.id" :item="item"/>
         </tbody>
     </table>
 </template>
 
 <script>
-    import CatalogTableItem from "./CatalogTableItem";
+import CatalogTableItem from "./CatalogTableItem";
+import {mapGetters} from "vuex";
 
-    export default {
-        name: "CatalogTable",
-        components: {CatalogTableItem}
-    };
+export default {
+    name: "CatalogTable",
+    components: {CatalogTableItem},
+    computed: mapGetters ({
+        loading: 'Items/loading',
+        items: 'Items/getItems'
+    })
+};
 </script>
 <style scoped lang="sass">
     p

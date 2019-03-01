@@ -14,10 +14,17 @@
     import AppHeader from "./components/AppHeader";
     import AppMenu from "./components/AppMenu";
     import Home from "./views/Home";
+    import {mapActions} from "vuex";
 
     export default {
         components: {Home, AppMenu, AppHeader},
+        mounted() {
+            return this.getData ({})
+        },
         methods: {
+            ...mapActions ({
+                getData: 'Items/getData'
+            }),
             burgerActive() {
                 $ (() => {
                     $ (".navbar_custom").toggleClass ("btn-burger_active");
