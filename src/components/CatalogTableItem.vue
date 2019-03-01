@@ -2,7 +2,7 @@
     <tr class="table__item">
         <td>
             <div class="table__img">
-                <img :src="`${item.img}`" alt=""/>
+                <img :src="`${item.img}`" alt="img"/>
             </div>
         </td>
         <td>

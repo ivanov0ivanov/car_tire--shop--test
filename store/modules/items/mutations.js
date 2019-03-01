@@ -10,6 +10,6 @@ export default {
     },
 
     [DELETE_ITEM](state, id) {
-        state.items = state.items.filter(item => item.id !== id);
+        state.items = state.items.filter (item => item.id !== id);
     }
 }

@@ -2,7 +2,7 @@
     <div class="catalog-search">
         <div class="form-control_search_container">
             <form>
-                <input v-model="query" class="form-control_search_custom search_custom_img" type="search"
+                <input v-model="query" @keyup.enter class="form-control_search_custom search_custom_img" type="search"
                        placeholder="Search"/>
             </form>
         </div>
