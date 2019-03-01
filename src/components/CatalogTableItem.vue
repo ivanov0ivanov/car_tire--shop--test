@@ -21,7 +21,7 @@
         <td>
             <div class="table__prise__container">
                 <div class="table__prise">{{item.price}}<span> UAH</span></div>
-                <div class="table__item__delete d-none">
+                <div class="table__item__delete d-none" @click.prevent="onDelete">
                     <img src="../assets/images/delete.svg" alt="delete"/>
                 </div>
             </div>
@@ -30,12 +30,24 @@
 </template>
 
 <script>
+    import {mapActions} from "vuex";
+
     export default {
         name: "CatalogTableItem",
         props: {
             item: {
                 type: Object,
                 required: true
+            }
+        },
+        methods: {
+            ...mapActions({
+                deleteItem: 'Items/deleteItem'
+            }),
+            onDelete() {
+                if (confirm ('Are you sure?')) {
+                    this.deleteItem (this.item.id);
+                }
             }
         }
     };

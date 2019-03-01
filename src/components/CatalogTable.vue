@@ -21,17 +21,25 @@
 </template>
 
 <script>
-import CatalogTableItem from "./CatalogTableItem";
-import {mapGetters} from "vuex";
+    import CatalogTableItem from "./CatalogTableItem";
+    import {mapActions, mapGetters} from "vuex";
 
-export default {
-    name: "CatalogTable",
-    components: {CatalogTableItem},
-    computed: mapGetters ({
-        loading: 'Items/loading',
-        items: 'Items/getItems'
-    })
-};
+    export default {
+        name: "CatalogTable",
+        components: {CatalogTableItem},
+        computed: mapGetters ({
+            loading: 'Items/loading',
+            items: 'Items/getItems'
+        }),
+        mounted() {
+            return this.getData ({})
+        },
+        methods: {
+            ...mapActions ({
+                getData: 'Items/getData'
+            }),
+        }
+    };
 </script>
 <style scoped lang="sass">
     p

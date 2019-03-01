@@ -2,15 +2,31 @@
     <div class="catalog-search">
         <div class="form-control_search_container">
             <form>
-                <input class="form-control_search_custom search_custom_img" type="search" placeholder="Search"/>
+                <input v-model="query" class="form-control_search_custom search_custom_img" type="search"
+                       placeholder="Search"/>
             </form>
         </div>
     </div>
 </template>
 
 <script>
+    import {mapActions} from "vuex";
+
     export default {
-        name: "CatalogSearch"
+        name: "CatalogSearch",
+        data() {
+            return {
+                query: ''
+            }
+        },
+        watch: {
+            query(value) {
+                this.setQuery (value);
+            }
+        },
+        methods: mapActions ({
+            setQuery: 'Search/setQuery'
+        })
     };
 </script>
 
