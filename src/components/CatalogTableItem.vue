@@ -7,7 +7,7 @@
         </td>
         <td>
             <div class="table__title">
-                <a href="#">{{item.title}}</a>
+                <router-link :to="{ name:'Item', params: {item}}">{{item.title}}</router-link>
             </div>
             <div class="table__description">
                 <p>{{item.description}}</p>
@@ -19,8 +19,8 @@
             </div>
         </td>
         <td>
-            <div class="table__prise__container">
-                <div class="table__prise">{{item.price}}<span> UAH</span></div>
+            <div class="table__price__container">
+                <div class="table__price">{{item.price}}<span> UAH</span></div>
                 <div class="table__item__delete d-none" @click.prevent="onDelete">
                     <img src="../assets/images/delete.svg" alt="delete"/>
                 </div>

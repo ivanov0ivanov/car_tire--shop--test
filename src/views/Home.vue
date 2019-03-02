@@ -1,17 +1,17 @@
 <template>
     <section>
-        <div class="catalog_container">
-            <div class="catalog-title_container">
-                <p class="catalog-title">Items catalog</p>
+            <div class="catalog_container">
+                <div class="catalog-title_container">
+                    <p class="catalog-title">Items catalog</p>
+                </div>
+                <div class="catalog-control">
+                    <DropdownSort/>
+                    <CatalogSearch/>
+                </div>
+                <div class="catalog-table">
+                    <CatalogTable/>
+                </div>
             </div>
-            <div class="catalog-control">
-                <DropdownSort/>
-                <CatalogSearch/>
-            </div>
-            <div class="catalog-table">
-                <CatalogTable/>
-            </div>
-        </div>
     </section>
 </template>
 

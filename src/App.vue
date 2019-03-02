@@ -5,7 +5,7 @@
         </header>
         <main>
             <AppMenu/>
-            <Home/>
+            <router-view></router-view>
         </main>
     </div>
 </template>
