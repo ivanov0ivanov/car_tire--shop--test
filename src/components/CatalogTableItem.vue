@@ -7,7 +7,7 @@
         </td>
         <td>
             <div class="table__title">
-                <router-link :to="{ name:'Item', params: {item}}">{{item.title}}</router-link>
+                <router-link :to="{name:'Item', params: {item}}">{{item.title}}</router-link>
             </div>
             <div class="table__description">
                 <p>{{item.description}}</p>

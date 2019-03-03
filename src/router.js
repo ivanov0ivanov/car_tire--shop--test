@@ -16,8 +16,7 @@ export default new Router({
     {
       name: "Item",
       path: "/item",
-      component: Item,
-      // props: (route) => route.params.item
+      component: Item
     }
   ]
 });
