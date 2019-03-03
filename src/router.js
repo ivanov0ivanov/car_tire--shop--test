@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/home";
-import Item from "./views/item";
+import Home from "./views/Home";
+import Item from "./views/Item";
 
 Vue.use(Router);
 
@@ -9,12 +9,12 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      name: "home",
+      name: "Home",
       path: "/",
       component: Home
     },
     {
-      name: "item",
+      name: "Item",
       path: "/item",
       component: Item
     }
