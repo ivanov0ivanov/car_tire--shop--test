@@ -3,7 +3,7 @@
         <div class="form-control_search_container">
             <form>
                 <input v-model="query" @keyup.enter class="form-control_search_custom search_custom_img" type="search"
-                       placeholder="Search"/>
+                       placeholder="Search" @blur='clearInput'/>
             </form>
         </div>
     </div>
@@ -24,9 +24,16 @@
                 this.setQuery (value);
             }
         },
-        methods: mapActions ({
-            setQuery: 'Search/setQuery'
-        })
+        methods: {
+            ...mapActions ({
+                items: 'Items/getItems',
+                setQuery: 'Search/setQuery'
+            }),
+            clearInput(){
+                this.query= '';
+                $('.form-control_search_custom').val('')
+            }
+        }
     };
 </script>
 
