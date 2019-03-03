@@ -13,5 +13,19 @@ export default {
 
     deleteItem({commit}, id) {
         commit (DELETE_ITEM, id);
+    },
+
+    burgerActive() {
+        $ (() => {
+            $ (".navbar_custom").toggleClass ("btn-burger_active");
+            $ (".burger-menu").toggleClass ("burger-menu_active");
+            $ (".btn-name").css ("display", "none");
+
+            if ($ (".menu").hasClass ("burger-menu_active") === false) {
+                setTimeout (() => {
+                    $ (".btn-name").css ("display", "inline-block");
+                }, 300);
+            }
+        });
     }
 }
