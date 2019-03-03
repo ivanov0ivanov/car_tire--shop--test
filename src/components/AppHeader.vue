@@ -15,12 +15,12 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "AppHeader",
-  methods: {
-    burgerActive() {
-      this.$emit("burgerActive");
-    }
-  }
+  methods: mapActions({
+    burgerActive: 'Items/burgerActive'
+  })
 };
 </script>
